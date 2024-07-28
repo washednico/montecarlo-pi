@@ -74,14 +74,14 @@ if mode == 'estimate':
 
     final_estimation = sum(final_estimations) / len(final_estimations)
     print(f"Final estimation: {final_estimation}")
+    print(f"Highest estimation: {max(final_estimations)}")
+    print(f"Lowest estimation: {min(final_estimations)}")
 
     plt.title('Monte Carlo Estimation of Pi')
     plt.xlabel('Number of Points')
     plt.ylabel('Estimated Value of Pi')
     plt.legend()
     plt.show()
-
-
 
     
 elif mode == 'visualize':
