@@ -68,11 +68,20 @@ if mode == 'estimate':
     for i, estimation in series_estimation.items():
         plt.plot(estimation, label=f"Estimation {i+1}")
 
+    final_estimations = []
+    for i in series_estimation:
+        final_estimations.append(series_estimation[i][-1])
+
+    final_estimation = sum(final_estimations) / len(final_estimations)
+    print(f"Final estimation: {final_estimation}")
+
     plt.title('Monte Carlo Estimation of Pi')
     plt.xlabel('Number of Points')
     plt.ylabel('Estimated Value of Pi')
     plt.legend()
     plt.show()
+
+
 
     
 elif mode == 'visualize':
