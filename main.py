@@ -42,10 +42,10 @@ def visualize_pi_estimation(num_points):
             y_outside_circle.append(y)
 
     pi_estimate = 4 * (len(x_inside_circle) / num_points)
-    print(f"Estimated value of pi: {pi_estimate}")
+    plt.text(0, 0, f"Estimated value of pi: {pi_estimate}", ha='center', va='center', fontsize=12, weight='bold')
 
-    plt.scatter(x_inside_circle, y_inside_circle, color='blue', label='Inside Circle', zorder=2)
-    plt.scatter(x_outside_circle, y_outside_circle, color='red', label='Outside Circle', zorder=1)
+    plt.scatter(x_inside_circle, y_inside_circle, color='red', label='Inside Circle', zorder=2)
+    plt.scatter(x_outside_circle, y_outside_circle, color='blue', label='Outside Circle', zorder=1)
     
     plt.title('Monte Carlo Estimation of Pi')
     plt.xlabel('x')
@@ -73,9 +73,9 @@ if mode == 'estimate':
         final_estimations.append(series_estimation[i][-1])
 
     final_estimation = sum(final_estimations) / len(final_estimations)
-    print(f"Final estimation: {final_estimation}")
-    print(f"Highest estimation: {max(final_estimations)}")
-    print(f"Lowest estimation: {min(final_estimations)}")
+    plt.text(0, 0.9, f"Final estimation: {final_estimation}", ha='center', va='center', fontsize=12, weight='bold')
+    plt.text(0, 0.8, f"Highest estimation: {max(final_estimations)}", ha='center', va='center', fontsize=12, weight='bold')
+    plt.text(0, 0.7, f"Lowest estimation: {min(final_estimations)}", ha='center', va='center', fontsize=12, weight='bold')
 
     plt.title('Monte Carlo Estimation of Pi')
     plt.xlabel('Number of Points')
